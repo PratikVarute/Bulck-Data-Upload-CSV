@@ -15,6 +15,6 @@ type User struct {
 	DateOfBirth           string      `json:"date_of_birth"`
 	Employment            Employment  `json:"employment"`
 	Address               Address     `json:"address"`
-	CreditCard            Credit_card `json:"Credit_card"`
-	Subcription           Subcription `json:"subcription"`
+	CreditCard            Credit_card `json:"credit_card"`
+	Subcription           Subcription `json:"subscription"`
 }
