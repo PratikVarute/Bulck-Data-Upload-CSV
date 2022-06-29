@@ -1,7 +1,5 @@
 package model
 
-import "time"
-
 type User struct {
 	ID                      int64       `json:id`
 	UID                     string      `json:uid`
@@ -14,7 +12,8 @@ type User struct {
 	Gender                  string      `json:gender`
 	Phone_number            string      `json:phone_number`
 	Social_insurance_number string      `json:social_insurance_number`
-	Date_of_birth           time.Time   `json:date_of_birth`
+	Date_of_birth           string      `json:date_of_birth`
 	Employment              Employment  `json:"employment"`
+	Address                 Address     `json:"address"`
 	Credit_card             Credit_card `json:Credit_card`
 }
