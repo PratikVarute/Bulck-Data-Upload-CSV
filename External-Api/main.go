@@ -1,19 +1,23 @@
 package main
 
-func main() { /*
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
 
-		response, err := http.Get("https://random-data-api.com/api/users/random_user")
-		//json.NewDecoder(response.Body).Decode(userData)
-		if err != nil {
-			fmt.Println(err.Error())
-			os.Exit(1)
-		}
+	"github.com/PratikVarute/Bulk-Data-Upload-CSV/model"
+)
 
-		//responseData, err := ioutil.ReadAll(response.Body)
-		if err != nil {
-			log.Fatal(err)
-		}
+func main() {
+	var userData model.User
 
-		//fmt.Println(string(responseData))
-	*/
+	response, err := http.Get("https://random-data-api.com/api/users/random_user")
+	err = json.NewDecoder(response.Body).Decode(&userData)
+	fmt.Println("data in structure \n", userData)
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+
 }
